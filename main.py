@@ -5,14 +5,22 @@ from wtforms.validators import DataRequired, Email
 from flask_bootstrap import Bootstrap
 from email_manager import New_Client
 from flask_sqlalchemy import SQLAlchemy
+import os
+
+
+# Set environment variables
+os.environ['SECRET_KEY'] = 'sda5s2d.zazd9s3ds2as21da3s4da9s'
+os.environ['DATABASE_URL'] = 'postgres://rzpbalfkyajkxr:63ce104c77cc77002338eab96dba5448b58b35d6aa1a99d2c0cac2864f0e477e@ec2-44-209-24-62.compute-1.amazonaws.com:5432/d29d11gmt7unos'
+
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 # Bootstrap Setup
 Bootstrap(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///clients.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
