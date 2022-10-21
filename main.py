@@ -9,8 +9,6 @@ import os
 
 
 # Set environment variables
-os.environ['SECRET_KEY'] = 'sda5s2d.zazd9s3ds2as21da3s4da9s'
-os.environ['DATABASE_URL'] = 'postgres://rzpbalfkyajkxr:63ce104c77cc77002338eab96dba5448b58b35d6aa1a99d2c0cac2864f0e477e@ec2-44-209-24-62.compute-1.amazonaws.com:5432/d29d11gmt7unos'
 
 
 
